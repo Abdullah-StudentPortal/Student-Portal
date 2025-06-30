@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بوابة الطالب - وزارة التربية والتعليم</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f3f6f9;
+    }
+    .header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      border-bottom: 1px solid #ddd;
+    }
+    .header img {
+      height: 45px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #015478;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .grades {
+      display: none;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://moe.gov.ae/assets/img/logo.png" alt="MOE">
+  </div>
+
+  <div class="container" id="loginBox">
+    <h2>تسجيل دخول الطالب</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="login()">دخول</button>
+  </div>
+
+  <div class="grades" id="gradesBox">
+    <h2>نتيجة الفصل الدراسي الثالث 2024-2025</h2>
+    <label>اختر الفصل:</label>
+    <select onchange="changeTerm(this)">
+      <option value="1">الفصل الأول</option>
+      <option value="2">الفصل الثاني</option>
+      <option value="3" selected>الفصل الثالث</option>
+    </select>
+
+    <table>
+      <tr><th>المادة</th><th>التقدير</th></tr>
+      <tr><td>التربية الإسلامية</td><td>B-</td></tr>
+      <tr><td>اللغة العربية</td><td>A-</td></tr>
+      <tr><td>الدراسات الاجتماعية والتربية الأخلاقية</td><td>A</td></tr>
+      <tr><td>اللغة الإنجليزية</td><td>B+</td></tr>
+      <tr><td>الرياضيات</td><td>B+</td></tr>
+      <tr><td>العلوم</td><td>A</td></tr>
+      <tr><td>اللغة الصينية</td><td>A+</td></tr>
+      <tr><td>الحسوبة والتصميم الإبداعي والابتكار</td><td>A+</td></tr>
+      <tr><td>التربية البدنية والصحية</td><td>A+</td></tr>
+      <tr><td>الفنون البصرية</td><td>A+</td></tr>
+      <tr><td>الفنون الموسيقية</td><td>A+</td></tr>
+      <tr><td>المسرح</td><td>A+</td></tr>
+      <tr><td>السلوك</td><td>A+</td></tr>
+    </table>
+  </div>
+
+  <script>
+    function login() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      if (u && p) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("gradesBox").style.display = "block";
+      } else {
+        alert("يرجى إدخال اسم المستخدم وكلمة المرور");
+      }
+    }
+    function changeTerm(sel) {
+      alert("هذا التصميم لعرض الفصل الثالث فقط حاليا");
+    }
+  </script>
+</body>
+</html>
